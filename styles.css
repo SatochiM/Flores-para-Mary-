@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #87CEEB;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+}
+
+h1, h2 {
+    color: #fff;
+    padding: 0 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.sunflower-wrapper {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sunflower {
+    width: 80px;
+    height: 80px;
+    background-color: yellow;
+    position: relative;
+    margin: 15px;
+    border-radius: 50% 50% 0 0;
+    opacity: 0;
+    animation: bloom 2s forwards;
+}
+
+.sunflower::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: brown;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.sunflower:nth-child(1) { animation-delay: 0.5s; }
+.sunflower:nth-child(2) { animation-delay: 1s; }
+.sunflower:nth-child(3) { animation-delay: 1.5s; }
+.sunflower:nth-child(4) { animation-delay: 2s; }
+.sunflower:nth-child(5) { animation-delay: 2.5s; }
+.sunflower:nth-child(6) { animation-delay: 3s; }
+.sunflower:nth-child(7) { animation-delay: 3.5s; }
+.sunflower:nth-child(8) { animation-delay: 4s; }
+.sunflower:nth-child(9) { animation-delay: 4.5s; }
+
+@keyframes bloom {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
